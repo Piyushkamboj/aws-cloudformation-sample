@@ -76,7 +76,10 @@
         "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
         "KeyName" : { "Ref" : "KeyName" },
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
-                          { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] }
+                          { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
+        "Tags" : [
+          {"Key" : "Name", "Value" : "lr-aws-cloudformation-sample-stack" }
+        ]
       }
     },
 
@@ -89,7 +92,10 @@
           "FromPort" : "22",
           "ToPort" : "22",
           "CidrIp" : { "Ref" : "SSHLocation"}
-        } ]
+        } ],
+        "Tags" : [
+          {"Key" : "Name", "Value" : "lr-aws-cloudformation-sample-stack" }
+        ]
       }
     }
   },
