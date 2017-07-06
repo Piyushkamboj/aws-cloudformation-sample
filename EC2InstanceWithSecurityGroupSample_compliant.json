@@ -91,7 +91,7 @@
           "IpProtocol" : "tcp",
           "FromPort" : "22",
           "ToPort" : "22",
-          "CidrIp" : { "Ref" : "SSHLocation"}
+          "CidrIp" : "127.0.0.1"
         } ],
         "Tags" : [
           {"Key" : "Name", "Value" : "lr-aws-cloudformation-sample-stack" }
